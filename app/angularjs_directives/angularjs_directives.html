@@ -1,0 +1,16 @@
+<h1>AngularJS Directives</h1>
+
+<h2>AngularJS 指令</h2>
+<p>Input something in the input box:</p>
+<!--ng-model指令把元素值（比如輸入域的值）綁定到應用程序。-->
+<p>Name: <input type="text" ng-model="firstName"></p>
+<p>You wrote: {{ firstName }}</p>
+
+<h2>數據綁定</h2>
+<!--使用ng-init不是很常見。-->
+<div data-ng-app="" data-ng-init="quantity=1;price=5">
+    <h2>Cost Calculator</h2>
+    Quantity: <input type="number" ng-model="quantity">
+    Price: <input type="number" ng-model="price">
+    <p><b>Total in dollar:</b> {{quantity * price}}</p>
+</div>
