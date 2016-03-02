@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.view3',
   'myApp.view4',
   'myApp.directives',
+  'myApp.angular_model',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
