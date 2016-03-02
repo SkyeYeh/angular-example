@@ -1,10 +1,14 @@
 <h1>AngularJS Directives</h1>
 
 <h2>AngularJS 指令</h2>
-<p>Input something in the input box:</p>
-<!--ng-model指令把元素值（比如輸入域的值）綁定到應用程序。-->
-<p>Name: <input type="text" ng-model="firstName"></p>
-<p>You wrote: {{ firstName }}</p>
+<!--ng-app 指令定義了 AngularJS 應用程序的根元素。ng-app 指令在網頁加載完畢時會自動引導（自動初始化）應用程序。-->
+<!--ng-init 指令為 AngularJS 應用程序定義了初始值。-->
+<div ng-app="" ng-init="firstName='John'">
+    <p>Input something in the input box:</p>
+    <!--ng-model 指令綁定 HTML 元素到應用程序數據。-->
+    <p>Name: <input type="text" ng-model="firstName"></p>
+    <p>You wrote: {{ firstName }}</p>
+</div>
 
 <h2>數據綁定</h2>
 <!--使用ng-init不是很常見。-->
@@ -14,3 +18,43 @@
     Price: <input type="number" ng-model="price">
     <p><b>Total in dollar:</b> {{quantity * price}}</p>
 </div>
+
+<h2>重複 HTML 元素</h2>
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+    <p>Looping with ng-repeat:</p>
+    <ul>
+        <!--ng-repeat 指令對於集合中（數組中）的每個項會克隆一次 HTML 元素。-->
+        <li ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
+</div>
+
+<div ng-app="" ng-init="users=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+    <p>Looping with objects:</p>
+    <ul>
+        <!--ng-repeat 指令對於集合中（數組中）的每個項會克隆一次 HTML 元素。-->
+        <li ng-repeat="x in users">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+
+<h2>創建自定義的指令</h2>
+<!--要調用自定義指令，HTMl 元素上需要添加自定義指令名。使用駝峰法來命名一個指令，runoobDirective，但在使用它時需要以 - 分割 runoob-directive。-->
+<!--元素名。-->
+<test-directive></test-directive>
+<!--屬性-->
+<div test-directive></div>
+
+<!--類名-->
+<div class="test-directive-class"></div>
+
+<!--註釋-->
+<!-- directive: test-directive-comment -->
+
+<h2>限制使用</h2>
+<div test-directive-restrictions></div>
