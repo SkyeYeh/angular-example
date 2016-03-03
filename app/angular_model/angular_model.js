@@ -11,4 +11,6 @@ angular.module('myApp.angular_model', ['ngRoute'])
 
     .controller('AngularModelCtrl', ['$scope', function ($scope) {
         $scope.name = "John Doe";
+
+        $scope.myText = 'post@myweb.com';
     }]);

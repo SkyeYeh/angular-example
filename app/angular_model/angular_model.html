@@ -2,7 +2,59 @@
 
 <h2>ng-model 指令</h2>
 <div>
+    <!--ng-model 指定可以將輸入域的值與 AngularJS 創建的變量綁定。-->
     Name: <input ng-model="name">
 </div>
 
 <h2>雙向綁定</h2>
+<div>
+    <!--在修改輸入域的值時， AngularJS 屬性的值也將修改。-->
+    Name: <input ng-model="name">
+    <h1>You entered: {{name}}</h1>
+</div>
+
+<h2>驗證用戶輸入</h2>
+<form name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <!--提示信息會在 ng-show 屬性返回 true 的情況下顯示。-->
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
+
+<h2>應用狀態</h2>
+<form name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="myText" required>
+    <p>Edit the e-mail address, and try to change the status.</p>
+    <!--ng-model 指令可以為應用數據提供狀態值(invalid、dirty、touched、error)。-->
+    <h1>Status</h1>
+    <!--如果輸入的值是合法的​​則為 true。-->
+    <p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets all criteria).</p>
+    <!--如果值改變則為 true。-->
+    <p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed).</p>
+    <!--如果通過點擊螢幕則為 true。-->
+    <p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus).</p>
+</form>
+
+<h2>CSS 類</h2>
+<!--ng-model 指令根據表單域的狀態添加/移除以下類：-->
+<!--ng-empty：該欄位為空-->
+<!--ng-not-empty：該欄位不為空-->
+<!--ng-touched：該欄位被點擊過-->
+<!--ng-untouched：該欄位未被點擊過-->
+<!--ng-valid：該欄位合法-->
+<!--ng-invalid：該欄位不合法-->
+<!--ng-dirty：該欄位被改變過-->
+<!--ng-pristine：該欄位未被改變過-->
+<!--ng-pending：任何滿足 $asyncValidators 的情況-->
+<div>
+    <style>
+        input.ng-invalid {
+            background-color: lightblue;
+        }
+    </style>
+    <form name="myForm">
+        Enter your name:
+        <input name="myName" ng-model="myName" required>
+    </form>
+</div>
