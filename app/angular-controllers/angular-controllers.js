@@ -5,8 +5,7 @@ angular.module('myApp.angular-controllers', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/angular-controllers', {
             templateUrl: 'angular-controllers/angular-controllers.html',
-            controller: 'AngularControllersCtrl',
-            controllerAs: 'controllers'
+            controller: 'AngularControllersCtrl'
         });
     }])
 
