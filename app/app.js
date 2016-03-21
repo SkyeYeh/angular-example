@@ -10,6 +10,7 @@ angular.module('myApp', [
     'myApp.angular-directives',
     'myApp.angular-model',
     'myApp.angular-controllers',
+    'myApp.angular-scope',
     'myApp.version'
 ]).config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/view1'});

@@ -1,0 +1,33 @@
+<h1>AngularJS Scope</h1>
+
+<h2>如何使用 Scope</h2>
+<div>
+    <h1>{{carName}}</h1>
+</div>
+
+<h2>Scope 概述</h2>
+<div>
+    <input ng-model="name">
+    <h1>My name is {{name}}</h1>
+</div>
+
+<h2>Scope 作用範圍</h2>
+<div>
+    <ul>
+        <li ng-repeat="name in names">{{name}}</li>
+    </ul>
+</div>
+
+<h2>根作用域</h2>
+<div>
+    <p>The rootScope's favorite color:</p>
+    <h1>{{getColor()}}</h1>
+
+    <div ng-controller="AngularScopeCtrl">
+        <p>The scope of the controller's favorite color:</p>
+        <h1>{{color}}</h1>
+    </div>
+
+    <p>The rootScope's favorite color is still:</p>
+    <h1>{{getColor()}}</h1>
+</div>
