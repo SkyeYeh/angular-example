@@ -1,0 +1,19 @@
+<h1>AngularJS Controllers</h1>
+
+<h2>AngularJS 控制器</h2>
+<div>
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name: <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{firstName + " " + lastName}}
+</div>
+
+<h2>控制器方法</h2>
+<div>Full Name: {{fullName()}}</div>
+
+<h2>其他實例</h2>
+<ul>
+    <li ng-repeat="name in names">
+        {{ name.name + ', ' + name.country }}
+    </li>
+</ul>
