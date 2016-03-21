@@ -1,0 +1,86 @@
+<h1>AngularJS Filters</h1>
+
+<h2>AngularJS 過濾器</h2>
+<ul>
+    <li>currency - 格式化數字為貨幣格式。</li>
+    <li>date - 格式化日期為特殊格式。</li>
+    <li>filter - 從數組項中選擇一個子集。</li>
+    <li>json - 格式化物件為 JSON 字串。</li>
+    <li>limitTo - Limits an array/string, into a specified number of elements/characters.</li>
+    <li>lowercase - 格式化字符串為小寫。</li>
+    <li>number - 格式化數字為字串。</li>
+    <li>orderBy - 根據某個表達式排列數組。</li>
+    <li>uppercase - 格式化字符串為大寫。</li>
+</ul>
+
+<h2>表達式中添加過濾器</h2>
+<div>
+    <!--uppercase 過濾器將字符串格式化為大寫-->
+    <p>The name is {{ lastName | uppercase }}</p>
+
+    <!--lowercase 過濾器將字符串格式化為小寫-->
+    <p>The name is {{ lastName | lowercase }}</p>
+</div>
+
+<h2>向指令添加過濾器</h2>
+<div>
+    <p>Looping with objects:</p>
+    <ul>
+        <!--orderBy 過濾器根據表達式排列數組-->
+        <li ng-repeat="name in names | orderBy:'country'">
+            {{ name.name + ', ' + name.country }}
+        </li>
+    </ul>
+</div>
+
+<h2>currency 過濾器</h2>
+<div>
+    <!--currency 過濾器將數字格式化為貨幣格式-->
+    <h1>Price: {{ price | currency }}</h1>
+</div>
+
+<h2>過濾輸入</h2>
+<div>
+    <ul>
+        <!--filter 過濾器從數組中選擇一個子集-->
+        <li ng-repeat="name in names | filter : 'i'">
+            {{ name }}
+        </li>
+    </ul>
+</div>
+
+<h2>過濾使用者輸入</h2>
+<div>
+    <p>Type a letter in the input field:</p>
+
+    <p><input type="text" ng-model="test"></p>
+
+    <ul>
+        <li ng-repeat="name in names | filter:test">
+            {{ name }}
+        </li>
+    </ul>
+</div>
+
+<h2>排序使用者輸入</h2>
+<div>
+    <table border="1" width="100%">
+        <tr>
+            <th ng-click="orderByMe('name')">Name</th>
+            <th ng-click="orderByMe('country')">Country</th>
+        </tr>
+        <tr ng-repeat="name in names | orderBy:colName">
+            <td>{{name.name}}</td>
+            <td>{{name.country}}</td>
+        </tr>
+    </table>
+</div>
+
+<h2>自訂過濾輸入</h2>
+<div>
+    <ul>
+        <li ng-repeat="name in names">
+            {{name | myFormat}}
+        </li>
+    </ul>
+</div>

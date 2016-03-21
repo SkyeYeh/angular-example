@@ -11,6 +11,7 @@ angular.module('myApp', [
     'myApp.angular-model',
     'myApp.angular-controllers',
     'myApp.angular-scope',
+    'myApp.angular-filters',
     'myApp.version'
 ]).config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/view1'});
