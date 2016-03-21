@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.directives', ['ngRoute'])
+angular.module('myApp.angular-directives', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/angularjs_directives', {
-            templateUrl: 'angularjs_directives/angularjs_directives.html',
-            controller: 'DirectivesCtrl'
+        $routeProvider.when('/angular-directives', {
+            templateUrl: 'angular-directives/angular-directives.html',
+            controller: 'AngularDirectivesCtrl'
         });
     }])
 
-    .controller('DirectivesCtrl', [function () {
+    .controller('AngularDirectivesCtrl', [function () {
 
     }])
     // 你可以使用.directive函數來添加自定義的指令。

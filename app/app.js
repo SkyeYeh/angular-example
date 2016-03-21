@@ -5,10 +5,10 @@ angular.module('myApp', [
     'ngRoute',
     'myApp.view1',
     'myApp.view2',
-    'myApp.view3',
-    'myApp.view4',
-    'myApp.directives',
-    'myApp.angular_model',
+    'myApp.angular-expressions',
+    'myApp.angular-modules',
+    'myApp.angular-directives',
+    'myApp.angular-model',
     'myApp.angular-controllers',
     'myApp.version'
 ]).config(['$routeProvider', function ($routeProvider) {
