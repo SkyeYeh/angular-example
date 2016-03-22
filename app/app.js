@@ -10,7 +10,7 @@ angular.module('myApp', [
     'myApp.angular-directives',
     'myApp.angular-model',
     'myApp.angular-controllers',
-    'myApp.angular-scope',
+    'myApp.angular-scopes',
     'myApp.angular-filters',
     'myApp.angular-services',
     'myApp.version'

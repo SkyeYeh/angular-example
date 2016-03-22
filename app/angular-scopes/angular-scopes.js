@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('myApp.angular-scope', ['ngRoute'])
+angular.module('myApp.angular-scopes', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/angular-scope', {
-            templateUrl: 'angular-scope/angular-scope.html',
-            controller: 'AngularScopeCtrl'
+        $routeProvider.when('/angular-scopes', {
+            templateUrl: 'angular-scopes/angular-scopes.html',
+            controller: 'AngularScopesCtrl'
         });
     }])
 
     // 當你在 AngularJS 創建控制器時，你可以將 $scope 對象當作一個參數傳遞。
-    .controller('AngularScopeCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    .controller('AngularScopesCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $scope.carName = "Volvo";
         $scope.name = "John Doe";
         $scope.names = ["Emil", "Tobias", "Linus"];
