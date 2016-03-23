@@ -1,7 +1,30 @@
 <h1>AngularJS AJAX - $http</h1>
 
-<h2>讀取 JSON 文件</h2>
+<h2>AngularJS $http</h2>
 <div>
     <p>Today's welcome message is:</p>
     <h1>{{welcome}}</h1>
+</div>
+
+<h2>方法</h2>
+<div>
+    <p>Today's welcome message is:</p>
+    <h1>{{welcome}}</h1>
+</div>
+
+<h2>屬性</h2>
+<div>
+    <p>Today's welcome message is:</p>
+    <p>Config : {{config}}</p>
+    <p>Data : {{data}}</p>
+    <p>Headers : {{headers}}</p>
+    <p>Status : {{status}}</p>
+    <p>StatusText : {{statusText}}</p>
+</div>
+
+<h2>JSON</h2>
+<div>
+    <ul>
+        <li ng-repeat="record in records">{{record.Name + ', ' + record.City + ', ' + record.Country}}</li>
+    </ul>
 </div>
