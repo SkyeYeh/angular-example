@@ -1,0 +1,53 @@
+<h1>AngularJS Select Boxes</h1>
+
+<h2>使用 ng-options 創建選擇框</h2>
+<div>
+    <!--可以使用 ng-option 指令來創建一個下拉列表，列表項通過對象和數組循環輸出。-->
+    <select ng-model="selectedName1" ng-options="name for name in names"></select>
+</div>
+
+<h2>ng-options 與 ng-repeat</h2>
+<div>
+    <!--ng-options 指令更適合創建下拉列表，它有以下優勢：使用 ng-options 的 option 是一個對象，ng-repeat 是一個字串。-->
+    <select ng-model="selectedName2">
+        <option ng-repeat="name in names">{{name}}</option>
+    </select>
+</div>
+
+<h2>應該用哪個更好?</h2>
+<div>
+    <!--使用 ng-options 指令，選擇的值是一個對象。-->
+    <select ng-model="selectedCar1" ng-options="car.model for car in cars"></select>
+    <h1>You selected: {{selectedCar1.model}}</h1>
+    <p>It's color is: {{selectedCar1.color}}</p>
+
+    <!--ng-repeat 有局限性，選擇的值是一個字符串。-->
+    <select ng-model="selectedCar2">
+        <option ng-repeat="car in cars">{{car.model}}</option>
+    </select>
+    <h1>You selected: {{selectedCar2}}</h1>
+</div>
+
+<h2>數據源為對象</h2>
+<div>
+    <!--使用物件作為數據來源，key 為鍵(key)，value 為值(value)。-->
+    <select ng-model="selectedOldCars1" ng-options="key for (key, value) in oldCars"></select>
+    <h1>You selected: {{selectedOldCars1}}</h1>
+
+    <select ng-model="selectedOldCars2">
+        <option ng-repeat="(key, value) in oldCars" value="{{value}}">{{key}}</option>
+    </select>
+    <h1>You selected: {{selectedOldCars2}}</h1>
+
+    <!--選擇的值在是一個在 key - value 中的物件。-->
+    <select ng-model="selectedNewCars1" ng-options="key for (key, value) in newCars"></select>
+    <h1>You selected: {{selectedNewCars1.brand}}</h1>
+    <h2>Model: {{selectedNewCars1.model}}</h2>
+    <h3>Color: {{selectedNewCars1.color}}</h3>
+
+    <!--下拉菜單也可以不使用 key - value 中的 key ,直接使用對象的屬性。-->
+    <select ng-model="selectedNewCars1" ng-options="value.brand　 for (key, value) in newCars"></select>
+    <h1>You selected: {{selectedNewCars1.brand}}</h1>
+    <h2>Model: {{selectedNewCars1.model}}</h2>
+    <h3>Color: {{selectedNewCars1.color}}</h3>
+</div>
