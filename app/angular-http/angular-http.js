@@ -35,4 +35,4 @@ angular.module('myApp.angular-http', ['ngRoute'])
         $http.get('angular-http/customers.json').then(function (responses) {
             $scope.records = responses.data.records;
         });
-    }])
+    }]);
