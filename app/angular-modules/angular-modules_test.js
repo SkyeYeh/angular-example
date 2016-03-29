@@ -14,7 +14,7 @@ describe('myApp.angular-modules module', function () {
     }));
 
     describe('AngularModulesCtrl controller', function () {
-        it('scope should init', function () {
+        it('should init scope', function () {
             var $scope = {};
             var angularModulesCtrl = $controller('AngularModulesCtrl', {$scope: $scope});
 
