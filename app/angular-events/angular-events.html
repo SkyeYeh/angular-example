@@ -1,0 +1,49 @@
+<h1>AngularJS Events</h1>
+
+<ul>
+    <li>ng-blur</li>
+    <li>ng-change</li>
+    <li>ng-click</li>
+    <li>ng-copy</li>
+    <li>ng-cut</li>
+    <li>ng-dblclick</li>
+    <li>ng-focus</li>
+    <li>ng-keydown</li>
+    <li>ng-keypress</li>
+    <li>ng-keyup</li>
+    <li>ng-mousedown</li>
+    <li>ng-mouseenter</li>
+    <li>ng-mouseleave</li>
+    <li>ng-mousemove</li>
+    <li>ng-mouseover</li>
+    <li>ng-mouseup</li>
+    <li>ng-paste</li>
+</ul>
+
+<h2>ng-click 指令</h2>
+<div>
+    <!--ng-click 指令定義了 AngularJS 點擊事件。-->
+    <button ng-click="events.count = events.count + 1">Click Me!</button>
+    <p>{{ events.count }}</p>
+
+    <button ng-click="events.myFunction()">Click Me!</button>
+    <p>{{ events.count }}</p>
+</div>
+
+<h2>顯示 HTML 元素</h2>
+<div>
+    <button ng-click="events.myFunc()">Click Me!</button>
+    <!--ng-show 指令可用於設置應用中的一部分是否可見。-->
+    <div ng-show="events.showMe">
+        <h1>Menu:</h1>
+        <div>Pizza</div>
+        <div>Pasta</div>
+        <div>Pesce</div>
+    </div>
+</div>
+
+<h2>$event 物件</h2>
+<div>
+    <h1 ng-mousemove="events.myClient($event)">Mouse Over Me!</h1>
+    <p>Coordinates: {{events.x + ', ' + events.y}}</p>
+</div>
