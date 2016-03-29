@@ -1,7 +1,7 @@
 'use strict';
 
-describe('myApp.angular-http module', function () {
-    beforeEach(module('myApp.angular-http'));
+describe('myApp.angular-sql module', function () {
+    beforeEach(module('myApp.angular-sql'));
 
     var $controller;
 
@@ -9,9 +9,9 @@ describe('myApp.angular-http module', function () {
         $controller = _$controller_;
     }));
 
-    describe('AngularHttpCtrl controller', function () {
+    describe('AngularSqlCtrl controller', function () {
         it('should inti parameter', function () {
-            var controller = $controller('AngularHttpCtrl');
+            var controller = $controller('AngularSqlCtrl');
 
             expect(controller).toBeDefined();
         });
