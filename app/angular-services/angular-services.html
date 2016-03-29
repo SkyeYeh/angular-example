@@ -3,31 +3,31 @@
 <h2>什麼是服務？</h2>
 <div>
     <p>The url of this page is:</p>
-    <h3>{{url}}</h3>
+    <h3>{{service.url}}</h3>
 </div>
 
 <h2>$http 服務</h2>
 <div>
     <p>Today's welcome message is:</p>
-    <h1>{{welcome}}</h1>
+    <h1>{{service.welcome}}</h1>
 </div>
 
 <h2>$timeout 服務</h2>
 <div>
     <p>This header will change after two seconds:</p>
-    <h1>{{header}}</h1>
+    <h1>{{service.header}}</h1>
 </div>
 
 <h2>$interval 服務</h2>
 <div>
     <p>The time is:</p>
-    <h1>{{time}}</h1>
+    <h1>{{service.time}}</h1>
 </div>
 
 <h2>創建自定義服務</h2>
 <div>
     <p>The hexadecimal value of 206 is:</p>
-    <h1>{{hex(206)}}</h1>
+    <h1>{{service.hex(206)}}</h1>
 </div>
 
 <h2>過濾器中，使用自定義服務</h2>
@@ -36,6 +36,6 @@
     <h1>{{255 | format}}</h1>
     <p>Use a filter when displayin the array [255, 251, 200]:</p>
     <ul>
-        <li ng-repeat="count in counts">{{count | format}}</li>
+        <li ng-repeat="count in service.counts">{{count | format}}</li>
     </ul>
 </div>

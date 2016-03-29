@@ -15,9 +15,7 @@ describe('myApp.angular-filters module', function () {
 
     describe('AngularFiltersCtrl controller', function () {
         it('should inti parameter', function () {
-            var $scope = {};
-
-            var controller = $controller('AngularFiltersCtrl', {$scope: $scope});
+            var controller = $controller('AngularFiltersCtrl');
 
             expect(controller).toBeDefined();
 
