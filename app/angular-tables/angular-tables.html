@@ -10,7 +10,7 @@
             <td>國家</td>
         </tr>
         <!--使用 orderBy 過濾器：排序顯示-->
-        <tr ng-repeat="record in records | orderBy : 'Country'">
+        <tr ng-repeat="record in table.records | orderBy : 'Country'">
             <!--顯示序號($index)-->
             <td>{{$index}}</td>
             <td>{{record.Name}}</td>
@@ -46,7 +46,7 @@
             <td>市</td>
             <td>國家</td>
         </tr>
-        <tr ng-repeat="record in records | orderBy : 'Country'">
+        <tr ng-repeat="record in table.records | orderBy : 'Country'">
             <td ng-if="$even">{{$index}}</td>
             <td ng-if="$odd" style="background-color:#f1f1f1">{{$index}}</td>
             <td>{{record.Name}}</td>
