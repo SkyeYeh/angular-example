@@ -16,9 +16,9 @@ describe('myApp.angular-modules module', function () {
     describe('AngularModulesCtrl controller', function () {
         it('should init scope', function () {
             var $scope = {};
-            var angularModulesCtrl = $controller('AngularModulesCtrl', {$scope: $scope});
+            var controller = $controller('AngularModulesCtrl', {$scope: $scope});
 
-            expect(angularModulesCtrl).toBeDefined();
+            expect(controller).toBeDefined();
             expect($scope.firstName).toEqual('John');
             expect($scope.lastName).toEqual('Doe');
         });

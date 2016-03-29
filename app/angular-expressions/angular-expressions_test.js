@@ -12,8 +12,8 @@ describe('myApp.angular-expressions module', function () {
 
     describe('AngularExpressionsCtrl controller', function () {
         it('should be defined', function () {
-            var angularExpressionsCtrl = $controller('AngularExpressionsCtrl');
-            expect(angularExpressionsCtrl).toBeDefined();
+            var controller = $controller('AngularExpressionsCtrl');
+            expect(controller).toBeDefined();
         });
     });
 });

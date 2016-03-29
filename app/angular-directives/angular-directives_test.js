@@ -15,9 +15,9 @@ describe('myApp.angular-directives module', function () {
 
     describe('AngularDirectivesCtrl controller', function () {
         it('scope should init', function () {
-            var angularModulesCtrl = $controller('AngularDirectivesCtrl');
+            var controller = $controller('AngularDirectivesCtrl');
 
-            expect(angularModulesCtrl).toBeDefined();
+            expect(controller).toBeDefined();
         });
     });
 

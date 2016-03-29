@@ -5,15 +5,16 @@ angular.module('myApp.angular-filters', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/angular-filters', {
             templateUrl: 'angular-filters/angular-filters.html',
-            controller: 'AngularFiltersCtrl'
+            controller: 'AngularFiltersCtrl',
+            controllerAs: 'filters'
         });
     }])
 
-    .controller('AngularFiltersCtrl', ['$scope', function ($scope) {
-        $scope.firstName = "John";
-        $scope.lastName = "Doe";
+    .controller('AngularFiltersCtrl', [function () {
+        this.firstName = "John";
+        this.lastName = "Doe";
 
-        $scope.names = [
+        this.names = [
             {name: 'Jani', country: 'Norway'},
             {name: 'Carl', country: 'Sweden'},
             {name: 'Margareth', country: 'England'},
@@ -25,10 +26,10 @@ angular.module('myApp.angular-filters', ['ngRoute'])
             {name: 'Kai', country: 'Norway'}
         ];
 
-        $scope.price = 58;
+        this.price = 58;
 
-        $scope.orderByMe = function (colName) {
-            $scope.colName = colName;
+        this.orderByMe = function (colName) {
+            this.colName = colName;
         }
     }])
 
