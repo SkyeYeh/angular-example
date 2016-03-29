@@ -1,0 +1,30 @@
+<h1>AngularJS HTML DOM</h1>
+
+<h2>ng-disabled 指令</h2>
+<div>
+    <p>
+        <!--ng-disabled 指令綁定應用程序數據 mySwitch 到 HTML 的 disabled 屬性。-->
+        <button ng-disabled="htmldom.mySwitch">Click Me!</button>
+    </p>
+    <p>
+        <input type="checkbox" ng-model="htmldom.mySwitch"/>Button
+    </p>
+    <p>
+        {{ htmldom.mySwitch }}
+    </p>
+</div>
+
+<h2>ng-show 指令</h2>
+<div>
+    <!--ng-show 指令隱藏或顯示一個 HTML 元素。-->
+    <p ng-show="true">I am visible.</p>
+    <p ng-show="false">I am not visible.</p>
+    <p ng-show="htmldom.hour > 12">I am visible.</p>
+</div>
+
+<h2>ng-hide 指令</h2>
+<div>
+    <!--ng-hide 指令用於隱藏或顯示 HTML 元素。-->
+    <p ng-hide="true">I am not visible.</p>
+    <p ng-hide="false">I am visible.</p>
+</div>
