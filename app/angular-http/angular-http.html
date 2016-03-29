@@ -3,28 +3,28 @@
 <h2>AngularJS $http</h2>
 <div>
     <p>Today's welcome message is:</p>
-    <h1>{{welcome}}</h1>
+    <h1>{{http.welcome}}</h1>
 </div>
 
 <h2>方法</h2>
 <div>
     <p>Today's welcome message is:</p>
-    <h1>{{welcome}}</h1>
+    <h1>{{http.welcome}}</h1>
 </div>
 
 <h2>屬性</h2>
 <div>
     <p>Today's welcome message is:</p>
-    <p>Config : {{config}}</p>
-    <p>Data : {{data}}</p>
-    <p>Headers : {{headers}}</p>
-    <p>Status : {{status}}</p>
-    <p>StatusText : {{statusText}}</p>
+    <p>Config : {{http.config}}</p>
+    <p>Data : {{http.data}}</p>
+    <p>Headers : {{http.headers}}</p>
+    <p>Status : {{http.status}}</p>
+    <p>StatusText : {{http.statusText}}</p>
 </div>
 
 <h2>JSON</h2>
 <div>
     <ul>
-        <li ng-repeat="record in records">{{record.Name + ', ' + record.City + ', ' + record.Country}}</li>
+        <li ng-repeat="record in http.records">{{record.Name + ', ' + record.City + ', ' + record.Country}}</li>
     </ul>
 </div>
