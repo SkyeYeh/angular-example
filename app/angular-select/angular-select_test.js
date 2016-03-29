@@ -1,7 +1,7 @@
 'use strict';
 
-describe('myApp.angular-http module', function () {
-    beforeEach(module('myApp.angular-http'));
+describe('myApp.angular-select module', function () {
+    beforeEach(module('myApp.angular-select'));
 
     var $controller;
 
@@ -9,11 +9,15 @@ describe('myApp.angular-http module', function () {
         $controller = _$controller_;
     }));
 
-    describe('AngularHttpCtrl controller', function () {
+    describe('AngularSelectCtrl controller', function () {
         it('should inti parameter', function () {
-            var controller = $controller('AngularHttpCtrl');
+            var controller = $controller('AngularSelectCtrl');
 
             expect(controller).toBeDefined();
+            expect(controller.names.length).toEqual(3);
+            expect(controller.cars.length).toEqual(3);
+            expect(controller.oldCars).toBeDefined();
+            expect(controller.newCars).toBeDefined();
         });
     });
 });
