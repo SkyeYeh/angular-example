@@ -3,13 +3,13 @@
 <h2>ng-model 指令</h2>
 <div>
     <!--ng-model 指定可以將輸入域的值與 AngularJS 創建的變量綁定。-->
-    Name: <input ng-model="name">
+    Name: <input ng-model="model.name">
 </div>
 
 <h2>雙向綁定</h2>
 <div>
     <!--在修改輸入域的值時， AngularJS 屬性的值也將修改。-->
-    Name: <input ng-model="name">
+    Name: <input ng-model="model.name">
     <h1>You entered: {{name}}</h1>
 </div>
 
@@ -24,7 +24,7 @@
 <h2>應用狀態</h2>
 <form name="myForm">
     Email:
-    <input type="email" name="myAddress" ng-model="myText" required>
+    <input type="email" name="myAddress" ng-model="model.myText" required>
     <p>Edit the e-mail address, and try to change the status.</p>
     <!--ng-model 指令可以為應用數據提供狀態值(invalid、dirty、touched、error)。-->
     <h1>Status</h1>
@@ -55,6 +55,6 @@
     </style>
     <form name="myForm">
         Enter your name:
-        <input name="myName" ng-model="myName" required>
+        <input name="myName" ng-model="model.myName" required>
     </form>
 </div>

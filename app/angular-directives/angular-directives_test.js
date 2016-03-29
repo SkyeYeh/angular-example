@@ -1,25 +1,28 @@
 'use strict';
 
 describe('myApp.angular-directives module', function () {
+    beforeEach(module('myApp.angular-directives'));
+
+    var $controller;
     var $compile;
     var $rootScope;
 
-    beforeEach(module('myApp.angular-directives'));
-    beforeEach(inject(function (_$compile_, _$rootScope_) {
+    beforeEach(inject(function (_$controller_, _$compile_, _$rootScope_) {
+        $controller = _$controller_;
         $compile = _$compile_;
         $rootScope = _$rootScope_;
     }));
 
     describe('AngularDirectivesCtrl controller', function () {
-        it('scope should init', inject(function ($controller) {
+        it('scope should init', function () {
             var angularModulesCtrl = $controller('AngularDirectivesCtrl');
 
             expect(angularModulesCtrl).toBeDefined();
-        }));
+        });
     });
 
     describe('testDirective directive', function () {
-        it('should contain html', inject(function () {
+        it('should contain html', function () {
             // 編譯包含指令的 HTML。
             var element = $compile('<test-directive></test-directive>')($rootScope);
 
@@ -27,11 +30,11 @@ describe('myApp.angular-directives module', function () {
             $rootScope.$digest();
 
             expect(element.html()).toContain('Made by a directive!');
-        }));
+        });
     });
 
     describe('testDirectiveClass directive', function () {
-        it('should contain html', inject(function () {
+        it('should contain html', function () {
             // 編譯包含指令的 HTML。
             var element = $compile('<div class="test-directive-class"></div>')($rootScope);
 
@@ -39,11 +42,11 @@ describe('myApp.angular-directives module', function () {
             $rootScope.$digest();
 
             expect(element.html()).toContain('Made by a directive!');
-        }));
+        });
     });
 
     describe('testDirectiveComment directive', function () {
-        it('should contain html', inject(function () {
+        it('should contain html', function () {
             // 編譯包含指令的 HTML。
             var element = $compile('<!-- directive: test-directive-comment -->')($rootScope);
 
@@ -51,11 +54,11 @@ describe('myApp.angular-directives module', function () {
             $rootScope.$digest();
 
             expect(element.html()).toContain('Made by a directive!');
-        }));
+        });
     });
 
     describe('testDirectiveRestrictions directive', function () {
-        it('should contain html', inject(function () {
+        it('should contain html', function () {
             // 編譯包含指令的 HTML。
             var element = $compile("<div test-directive-restrictions></div>")($rootScope);
 
@@ -63,6 +66,6 @@ describe('myApp.angular-directives module', function () {
             $rootScope.$digest();
 
             expect(element.html()).toContain('Made by a directive!');
-        }));
+        });
     });
 });

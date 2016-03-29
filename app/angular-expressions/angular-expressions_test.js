@@ -1,13 +1,19 @@
 'use strict';
 
 describe('myApp.angular-expressions module', function () {
-
     beforeEach(module('myApp.angular-expressions'));
 
+    var $controller;
+
+    beforeEach(inject(function (_$controller_) {
+        // 注入參數。
+        $controller = _$controller_;
+    }));
+
     describe('AngularExpressionsCtrl controller', function () {
-        it('should be defined', inject(function ($controller) {
+        it('should be defined', function () {
             var angularExpressionsCtrl = $controller('AngularExpressionsCtrl');
             expect(angularExpressionsCtrl).toBeDefined();
-        }));
+        });
     });
 });
