@@ -10,7 +10,7 @@ angular.module('myApp.angular-forms', ['ngRoute'])
         });
     }])
 
-    .controller('AngularFormsCtrl', ['$http', function ($http) {
+    .controller('AngularFormsCtrl', [function () {
         this.firstName = 'Jone';
         this.master = {firstName: 'John', lastName: 'Doe'};
 
