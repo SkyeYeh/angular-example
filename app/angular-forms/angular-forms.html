@@ -1,0 +1,99 @@
+<h1>AngularJS Forms</h1>
+
+<h2>HTML 控件</h2>
+<ul>
+    <li>input elements</li>
+    <li>select elements</li>
+    <li>button elements</li>
+    <li>textarea elements</li>
+</ul>
+<div>
+    <form>
+        First Name: <input type="text" ng-model="forms.formsName">
+    </form>
+
+    <h1>You entered: {{forms.formsName}}</h1>
+</div>
+
+<h2>Checkbox</h2>
+<div>
+    <form>
+        Check to show a header:
+        <!--值為 true 或 false。-->
+        <input type="checkbox" ng-model="forms.myCheckVar">
+    </form>
+
+    <h1 ng-show="forms.myCheckVar">My Header</h1>
+</div>
+
+<h2>Radiobuttons</h2>
+<div>
+    <form>
+        Pick a topic:
+        <!--相同 ng-model 可以有不同的值，但只會使用被選擇的一個。-->
+        <input type="radio" ng-model="forms.myRadioVar" value="dogs">Dogs
+        <input type="radio" ng-model="forms.myRadioVar" value="tuts">Tutorials
+        <input type="radio" ng-model="forms.myRadioVar" value="cars">Cars
+    </form>
+
+    <div ng-switch="forms.myRadioVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+    </div>
+</div>
+
+<h2>Selectbox</h2>
+<div>
+    <form>
+        Select a topic:
+        <!--ng-model 有被選擇 option 的值。-->
+        <select ng-model="forms.mySelectVar">
+            <option value="">
+            <option value="dogs">Dogs
+            <option value="tuts">Tutorials
+            <option value="cars">Cars
+        </select>
+    </form>
+
+    <div ng-switch="forms.mySelectVar">
+        <div ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+    </div>
+</div>
+
+<h2>AngularJS 表單實例</h2>
+<div>
+    <!--novalidate 屬性是在 HTML5 中新增的。禁用了使用瀏覽器的默認驗證。-->
+    <form novalidate>
+        First Name:<br>
+        <!--ng-model 指令綁定了兩個 input 元素到模型的 user 對象。-->
+        <input type="text" ng-model="forms.user.firstName"><br>
+        Last Name:<br>
+        <input type="text" ng-model="forms.user.lastName">
+        <br><br>
+        <!--ng-click 指令調用了 reset() 方法，且在點擊按鈕時調用。-->
+        <button ng-click="forms.reset()">RESET</button>
+    </form>
+    <p>form = {{forms.user}}</p>
+    <p>master = {{forms.master}}</p>
+</div>
