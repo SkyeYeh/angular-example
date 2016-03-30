@@ -1,0 +1,105 @@
+<h1>AngularJS Animations</h1>
+
+<h2>什麼是動畫？</h2>
+<style>
+    div.animation {
+        transition: all linear 0.5s;
+        background-color: lightblue;
+        height: 100px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .animation.ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+    }
+</style>
+<!--需使用 ngAnimate module。-->
+<div>
+    <!--應用中動畫不宜太多，但合適的使用動畫可以增加頁面的豐富性，也可以更易讓用戶理解。-->
+    <h1>Hide the DIV: <input type="checkbox" ng-model="animations.myCheck"></h1>
+    <div ng-hide="animations.myCheck" class="animation"></div>
+</div>
+
+<h2>ngAnimate 做了什麼?</h2>
+<div>
+    <p>
+        ngAnimate 模型可以添加或移除class 。
+        ngAnimate 模型並不能使HTML 元素產生動畫，但是ngAnimate 會監測事件，類似隱藏顯示HTML 元素，如果事件發生ngAnimate 就會使用預定義的class 來設置HTML 元素的動畫。
+        AngularJS 添加/移除class 的指令:
+    <ul>
+        <li>ng-show</li>
+        <li>ng-hide</li>
+        <li>ng-class</li>
+        <li>ng-view</li>
+        <li>ng-include</li>
+        <li>ng-repeat</li>
+        <li>ng-if</li>
+        <li>ng-switch</li>
+    </ul>
+    </p>
+    <p>
+        ng-show和ng-hide指令用於添加或移除ng-hide class的值。
+        其他指令會在進入DOM會添加ng-enter類，移除DOM會添加ng-leave屬性。
+        當HTML元素位置改變時，ng-repeat指令同樣可以添加ng-move類。
+        此外，在動畫完成後，HTML元素的類集合將被移除。例如： ng-hide指令會添加一下類：
+    <ul>
+        <li>ng-animate</li>
+        <li>ng-hide-animate</li>
+        <li>ng-hide-add (如果元素將被隱藏)</li>
+        <li>ng-hide-remove (如果元素將顯示)</li>
+        <li>ng-hide-add-active (如果元素將隱藏)</li>
+        <li>ng-hide-remove-active (如果元素將顯示)</li>
+    </ul>
+    </p>
+</div>
+
+<h2>CSS 過渡</h2>
+<style>
+    div.transitions {
+        /*CSS 過渡可以讓我們平滑的將一個 CSS 屬性值修改為另外一個。*/
+        transition: all linear 0.5s;
+        background-color: lightblue;
+        height: 100px;
+    }
+
+    .transitions.ng-hide {
+        height: 0;
+    }
+</style>
+<div>
+    <h1>Hide the DIV: <input type="checkbox" ng-model="animations.myCheck"></h1>
+    <div ng-hide="animations.myCheck" class="transitions"></div>
+</div>
+
+<h2>CSS 動畫</h2>
+<style>
+    @keyframes myChange {
+        from {
+            height: 100px;
+        }
+        to {
+            height: 0;
+        }
+    }
+
+    div.animations {
+        height: 100px;
+        background-color: lightblue;
+    }
+
+    div.animations.ng-hide {
+        /*CSS 動畫允許你平滑的修改 CSS 屬性值。*/
+        animation: 0.5s myChange;
+    }
+</style>
+<div>
+    Hide the DIV: <input type="checkbox" ng-model="animations.myCheck">
+    <div ng-hide="animations.myCheck" class="animations"></div>
+</div>
