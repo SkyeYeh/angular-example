@@ -1,35 +1,52 @@
-module.exports = function(config){
-  config.set({
+module.exports = function (config) {
+    config.set({
 
-    basePath : './',
+        basePath: './',
 
-    files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-animate/angular-animate.js',
-      'app/components/**/*.js',
-      'app/view*/**/*.js',
-      'app/angular-*/**/*.js'
-    ],
+        files: [
+            'app/bower_components/angular/angular.js',
+            'app/bower_components/angular-route/angular-route.js',
+            'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/bower_components/angular-animate/angular-animate.js',
+            'app/components/**/*.js',
+            'app/view*/**/*.js',
+            'app/angular-*/**/*.js'
+        ],
 
-    autoWatch : true,
+        autoWatch: true,
 
-    frameworks: ['jasmine'],
+        frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+        browsers: ['Chrome'],
 
-    plugins : [
+        plugins: [
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
-            ],
+            'karma-junit-reporter',
+            'karma-coverage'
+        ],
 
-    junitReporter : {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
+        // coverage reporter generates the coverage
+        reporters: ['progress', 'junit', 'coverage'],
 
-  });
+        junitReporter: {
+            outputFile: 'test_out/unit.xml',
+            suite: 'unit'
+        },
+
+        preprocessors: {
+            // source files, that you wanna generate coverage for
+            // do not include tests or libraries
+            // (these files will be instrumented by Istanbul)
+            'app/angular-*/**/*.js': ['coverage']
+        },
+
+        // optionally, configure the reporter
+        coverageReporter: {
+            type: 'html',
+            dir: 'coverage/'
+        }
+
+    });
 };
