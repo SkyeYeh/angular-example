@@ -1,0 +1,14 @@
+<h1>AngularJS Application</h1>
+
+<h2>做一個購物清單</h2>
+
+<div>
+    <ul>
+        <header><h3>My Shopping List</h3></header>
+        <li ng-repeat="product in application.products">{{product}}<span
+                ng-click="application.removeItem($index)">[x]</span></li>
+        <input type="text" placeholder="Add shopping items here" ng-model="application.item">
+        <input type="button" ng-click="application.addItem()" value="add">
+        {{application.errorText}}
+    </ul>
+</div>

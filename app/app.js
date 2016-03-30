@@ -24,6 +24,7 @@ angular.module('myApp', [
     'myApp.angular-api',
     'myApp.angular-includes',
     'myApp.angular-animations',
+    'myApp.angular-application',
     'myApp.version'
 ]).config(['$routeProvider', function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/view1'});
