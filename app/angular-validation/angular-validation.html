@@ -1,0 +1,131 @@
+<h1>AngularJS Form Validation</h1>
+
+<h2>Required</h2>
+<div>
+    <form name="myInputForm">
+        <!--使用 HTML5 屬性 required 來指定 input 必須輸入。-->
+        <input type="text" name="myInput" ng-model="validation.muInput" required>
+    </form>
+
+    <p>The input's valid state is:</p>
+    <h1>{{myInputForm.myInput.$valid}}</h1>
+</div>
+
+<h2>E-mail</h2>
+<div>
+    <form name="myEmailForm">
+        <!--使用 HTML5 type email 來指定值為 e-mail。-->
+        <input type="email" name="myEmailInput" ng-model="validation.myEmailInput">
+    </form>
+
+    <p>The input's valid state is:</p>
+    <h1>{{myEmailForm.myEmailInput.$valid}}</h1>
+</div>
+
+<h2>Form State and Input State</h2>
+<!--AngularJs 不斷更新 form 跟 input 的狀態。屬性值為 true 或 false。-->
+<p>Input states:</p>
+<ul>
+    <li>$untouched - 該欄位尚未被觸摸</li>
+    <li>$touched - 該欄位已經被觸摸</li>
+    <li>$pristine - 該欄位尚未被修改</li>
+    <li>$dirty - 該欄位已經被修改</li>
+    <li>$invalid - 該欄位的內容無效</li>
+    <li>$valid - 該欄位的內容有效</li>
+</ul>
+<p>Forms states:</p>
+<ul>
+    <li>$pristine - 欄位尚未被修改</li>
+    <li>$dirty - 欄位已經被修改</li>
+    <li>$invalid - 該表格的內容無效</li>
+    <li>$valid - 該表格的內容有效</li>
+    <li>$submitted - 該表格已提交</li>
+</ul>
+<div>
+    <form name="myStateForm">
+        <p>Name:
+            <input name="myStateName" ng-model="validation.myStateName" required>
+            <span ng-show="myStateForm.myStateName.$touched && myStateForm.myStateName.$invalid">The name is required.</span>
+        </p>
+    </form>
+</div>
+
+<h2>CSS Classes</h2>
+<!--AngularJs 依據 form 跟 input 的狀態增加 CSS classes。-->
+<p>Input classes:</p>
+<ul>
+    <li>ng-untouched - 該欄位尚未被觸摸</li>
+    <li>ng-touched - 該欄位已經被觸摸</li>
+    <li>ng-pristine - 該欄位尚未被修改</li>
+    <li>ng-dirty - 該欄位已經被修改</li>
+    <li>ng-valid - 該欄位的內容有效</li>
+    <li>ng-invalid - 該欄位的內容無效</li>
+    <li>ng-valid-key - 驗證項目之一，例如：ng-valid-required，在多個驗證時使用</li>
+    <li>ng-invalid-key - 例如：ng-invalid-required</li>
+</ul>
+<p>Forms classes:</p>
+<ul>
+    <li>ng-pristine - 欄位尚未被修改</li>
+    <li>ng-dirty - 欄位已經被修改</li>
+    <li>ng-valid - 該表格的內容有效</li>
+    <li>ng-invalid - 該表格的內容無效</li>
+    <li>ng-valid-key - 驗證項目之一，例如：ng-valid-required，在多個驗證時使用</li>
+    <li>ng-invalid-key - 例如：ng-invalid-required</li>
+</ul>
+<style>
+    input.input.ng-invalid {
+        background-color: pink;
+    }
+
+    input.input.ng-valid {
+        background-color: lightgreen;
+    }
+
+    form.form.ng-pristine {
+        background-color: lightblue;
+    }
+
+    form.form.ng-dirty {
+        background-color: pink;
+    }
+</style>
+<div>
+    <form name="myClassesForm" class="form">
+        <input name="myClassesName" class="input" ng-model="validation.myName" required>
+    </form>
+</div>
+
+<h2>自訂驗證</h2>
+<div>
+    <form name="myCustomForm">
+        <input name="myCustomInput" ng-model="validation.myCustomInput" required my-directive>
+    </form>
+
+    <p>The input's valid state is:</p>
+    <h1>{{myCustomForm.myCustomInput.$valid}}</h1>
+</div>
+
+<h2>驗證範例</h2>
+<div>
+    <!--HTML 表單屬性的 novalidate 用於禁用默認瀏覽器驗證。-->
+    <form name="myForm" novalidate>
+        <p>Username:<br>
+            <input type="text" name="user" ng-model="validation.user" required>
+            <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+                <span ng-show="myForm.user.$error.required">Username is required.</span>
+            </span>
+        </p>
+
+        <p>Email:<br>
+            <input type="email" name="email" ng-model="validation.email" required>
+            <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                <span ng-show="myForm.email.$error.required">Email is required.</span>
+                <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+            </span>
+        </p>
+
+        <p>
+            <input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid">
+        </p>
+    </form>
+</div>
