@@ -29,7 +29,7 @@ module.exports = function (config) {
         ],
 
         // coverage reporter generates the coverage
-        reporters: ['progress', 'junit', 'coverage', 'coveralls'],
+        reporters: ['junit', 'coverage', 'coveralls'],
 
         junitReporter: {
             outputFile: 'test_out/unit.xml',
