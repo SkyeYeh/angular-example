@@ -28,7 +28,6 @@
 
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
-    "test2": "type coverage/lcov.info > coveralls",
     "test-single-run": "karma start karma.conf.js --single-run",
     "test-reporter": "karma start --reporters junit,dots",
 

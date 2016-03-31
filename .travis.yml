@@ -14,4 +14,4 @@ script:
   - node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
 
 after_script:
-  - ls && cat coverage/lcov.info | coveralls
+  - ls coverage && cat coverage/lcov.info | coveralls
