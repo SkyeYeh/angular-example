@@ -21,14 +21,15 @@ module.exports = function (config) {
 
         plugins: [
             'karma-chrome-launcher',
+            'karma-coverage',
+            'karma-coveralls',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter',
-            'karma-coverage'
+            'karma-junit-reporter'
         ],
 
         // coverage reporter generates the coverage
-        reporters: ['progress', 'junit', 'coverage'],
+        reporters: ['progress', 'junit', 'coverage', 'coveralls'],
 
         junitReporter: {
             outputFile: 'test_out/unit.xml',
@@ -44,7 +45,7 @@ module.exports = function (config) {
 
         // optionally, configure the reporter
         coverageReporter: {
-            type: 'html',
+            type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
             dir: 'coverage/'
         }
 
