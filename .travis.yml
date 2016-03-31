@@ -13,4 +13,4 @@ script:
   - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --browsers=Firefox
   - node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
 
-after_script: "npm install coveralls && cat ./coverage/lcov.info | coveralls"
+after_script: "coveralls"
