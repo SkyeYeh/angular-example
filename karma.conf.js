@@ -46,7 +46,8 @@ module.exports = function (config) {
         // optionally, configure the reporter
         coverageReporter: {
             type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
-            dir: 'coverage/'
+            dir: 'coverage',
+            subdir: '/'
         }
 
     });
