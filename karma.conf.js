@@ -29,7 +29,7 @@ module.exports = function (config) {
         ],
 
         // coverage reporter generates the coverage
-        reporters: ['junit', 'coverage', 'coveralls'],
+        reporters: ['junit', 'coverage'],
 
         junitReporter: {
             outputFile: 'test/junit/junit.xml',
@@ -47,7 +47,7 @@ module.exports = function (config) {
         coverageReporter: {
             type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
             dir: 'test',
-            subdir: 'coverage'
+            subdir: '/'
         }
     });
 };
