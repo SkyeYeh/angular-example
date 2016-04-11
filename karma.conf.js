@@ -32,8 +32,8 @@ module.exports = function (config) {
         reporters: ['junit', 'coverage', 'coveralls'],
 
         junitReporter: {
-            outputFile: 'test_out/unit.xml',
-            suite: 'unit'
+            outputFile: 'test/junit/junit.xml',
+            useBrowserName: false
         },
 
         preprocessors: {
@@ -46,9 +46,8 @@ module.exports = function (config) {
         // optionally, configure the reporter
         coverageReporter: {
             type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
-            dir: 'coverage',
-            subdir: '/'
+            dir: 'test',
+            subdir: 'coverage'
         }
-
     });
 };
